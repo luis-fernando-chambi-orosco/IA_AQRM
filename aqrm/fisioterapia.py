@@ -1,6 +1,6 @@
 import cv2#Es la biblioteca OpenCV, utilizada para el procesamiento de imágenes y vídeo 
 import seguimientomanos as sm#se importa el archivo python seguimientomanos y se le asigna el alias sm para simplificar su uso en el código.
-
+#lesion neurologia motor fino 
 detector = sm.detectormanos(Confdeteccion=int(0.75))
 
 cap = cv2.VideoCapture(0)

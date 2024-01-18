@@ -1,5 +1,5 @@
 import cv2 #Es la biblioteca OpenCV, utilizada para el procesamiento de imágenes y vídeo 
-import seguimientomanos as sm  # Importa el módulo seguimientomanos que contiene la implementación del seguimiento de manos
+import seguimientomanos as sm  # Importa el módulo seguimientomanos que contiene la implementación del seguimiento de manos y se dan  alias sm para simplificar su uso en el código.
 
 # Crea un objeto de la clase detectormanos con un umbral de confianza de detección del 75%
 detector = sm.detectormanos(Confdeteccion=int(0.75))
@@ -24,7 +24,7 @@ while True:
     if len(manosinfo) != 0: #se activa si al menos una mano está siendo detectada.
         dedos = detector.dedosarriba()  # Obtiene la información sobre qué dedos están levantados
         print(dedos)
-        contar = dedos.count(1)  # Cuenta cuántos dedos están levantados
+        contar = dedos.count(1)  # Cuenta cuántos dedos están levantados es decir cuenta cuántos elementos con el valor 1
 
         # Dibuja el número de dedos levantados en el frame
         cv2.putText(frame, str(contar), (445, 375), cv2.FONT_HERSHEY_PLAIN, 10, (0, 255, 0), 25)
