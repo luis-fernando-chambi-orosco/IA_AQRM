@@ -1,0 +1,4 @@
+mediapipe
+math
+opencv-python
+tensorflow
