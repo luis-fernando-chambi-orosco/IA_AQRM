@@ -1,5 +1,5 @@
-import cv2
-import seguimientomanos as sm
+import cv2#Es la biblioteca OpenCV, utilizada para el procesamiento de imágenes y vídeo 
+import seguimientomanos as sm#se importa el archivo python seguimientomanos y se le asigna el alias sm para simplificar su uso en el código.
 
 detector = sm.detectormanos(Confdeteccion=int(0.75))
 
@@ -32,7 +32,7 @@ while True:
     cv2.putText(frame, f"Conteo Repeticiones: {conteo_repeticiones}", (10, 50), cv2.FONT_HERSHEY_PLAIN, 2, (0, 255, 0), 2)
 
     cv2.imshow("Contando Repeticiones", frame)
-    t = cv2.waitKey(1)
+    t = cv2.waitKey(1) # Espera la pulsación de tecla por 1 milisegundo
 
     if t == 27:
         break
