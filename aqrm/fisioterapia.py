@@ -1,6 +1,8 @@
 import cv2#Es la biblioteca OpenCV, utilizada para el procesamiento de imágenes y vídeo 
 import seguimientomanos as sm#se importa el archivo python seguimientomanos y se le asigna el alias sm para simplificar su uso en el código.
 #lesion neurologia motor fino 
+
+# Crea un objeto de la clase detectormanos con un umbral de confianza de detección del 75%
 detector = sm.detectormanos(Confdeteccion=int(0.75))
 
 cap = cv2.VideoCapture(0)
@@ -10,9 +12,10 @@ mano_abierta = True  # Suponemos que la mano está abierta al inicio
 conteo_repeticiones = 0
 
 while True:
-    ret, frame = cap.read()
+    ret, frame = cap.read() # Lee un frame de la cámara
 
-    frame = detector.encontrarmanos(frame)
+    frame = detector.encontrarmanos(frame) # Detecta y dibuja las manos en el frame
+
 
     # Verificar el estado actual de la mano
     manos_info, cuadro = detector.encontrarposicion(frame, dibujar=False)
